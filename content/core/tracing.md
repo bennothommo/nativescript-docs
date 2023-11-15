@@ -115,7 +115,7 @@ Trace.setErrorHandler(errorHandler)
 
 ## Trace API
 
-### addCategories and setCategories
+### addCategories() and setCategories()
 
 ```ts
 // Only allow the defined categories
@@ -151,17 +151,17 @@ Sets or adds to the categories that the Trace module will trace. `categories` is
 
 ---
 
-### addWriter
+### addWriter()
 
 ```ts
 Trace.addWriter(writer: TraceWriter)
 ```
 
-Adds a TraceWriter instance to the trace module.
+Adds a TraceWriter instance to the trace module. The TraceWriter instance must define a `write()` method that accepts three arguments - a message as a string, a category as a string and, optionally, a message type as a number.
 
 ---
 
-### clearWriters
+### clearWriters()
 
 ```ts
 Trace.clearWriters()
@@ -171,7 +171,7 @@ Clears all the writers from the trace module. Call this methods before adding a 
 
 ---
 
-### disable
+### disable()
 
 ```ts
 Trace.disable()
@@ -181,7 +181,7 @@ Disables the tracing.
 
 ---
 
-### enable
+### enable()
 
 ```ts
 Trace.enable()
@@ -191,7 +191,7 @@ Enables the tracing.
 
 ---
 
-### error
+### error()
 
 ```ts
 Trace.error(error: string | Error)
@@ -201,7 +201,7 @@ Passes an error to the registered TraceErrorHandler.
 
 ---
 
-### getErrorHandler
+### getErrorHandler()
 
 ```ts
 Trace.getErrorHandler()
@@ -211,7 +211,7 @@ Gets the registered `TraceErrorHandler`.
 
 ---
 
-### setErrorHandler
+### setErrorHandler()
 
 ```ts
 Trace.setErrorHandler(handler: TraceErrorHandler)
@@ -221,7 +221,7 @@ Registers an error handler.
 
 ---
 
-### isCategorySet
+### isCategorySet()
 
 ```ts
 Trace.isCategorySet(category: string)
@@ -241,7 +241,7 @@ Returns a `boolean` for whether tracing is enabled or not.
 
 ---
 
-### notifyEvent
+### notifyEvent()
 
 ```ts
 Trace.notifyEvent(object: Object, name: string, data?: any)
@@ -251,7 +251,7 @@ Notifies all the attached listeners for an event that has occurred in the sender
 
 ---
 
-### removeWriter
+### removeWriter()
 
 ```ts
 Trace.removeWriter(writer: TraceWriter)
@@ -261,7 +261,7 @@ Removes a `TraceWriter` instance from the trace module.
 
 ---
 
-### write
+### write()
 
 ```ts
 Trace.write(message: any, category: string, type?: number)
